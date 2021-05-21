@@ -1,0 +1,5 @@
+/mnt/c/subgraph_matching/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/subgraph_matching/build/CMakeFiles/edit_cache.dir
+/mnt/c/subgraph_matching/build/main/CMakeFiles/rebuild_cache.dir
+/mnt/c/subgraph_matching/build/main/CMakeFiles/program.dir
+/mnt/c/subgraph_matching/build/main/CMakeFiles/edit_cache.dir

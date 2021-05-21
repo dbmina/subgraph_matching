@@ -34,7 +34,7 @@ class Graph {
   inline Vertex GetNeighbor(size_t offset) const;
 
   inline bool IsNeighbor(Vertex u, Vertex v) const;
-
+  std::vector<Vertex> adj_array_;
  private:
   int32_t graph_id_;
 
@@ -48,7 +48,7 @@ class Graph {
   std::vector<std::pair<size_t, size_t>> start_offset_by_label_;
 
   std::vector<Label> label_;
-  std::vector<Vertex> adj_array_;
+//  std::vector<Vertex> adj_array_;
 
   Label max_label_;
 };
