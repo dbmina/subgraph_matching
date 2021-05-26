@@ -23,10 +23,9 @@ void Backtrack::PrintAllMatches(const Graph &data, const Graph &query,
                                 const CandidateSet &cs) {
                                   
   std::cout << "t " << query.GetNumVertices() << "\n";
-  
-  // implement your code here.
+
   n=query.GetNumVertices();
-  //루트 찾기
+  //find root
  
   int root=0;
   int initial_candidate=0;
@@ -44,7 +43,7 @@ void Backtrack::PrintAllMatches(const Graph &data, const Graph &query,
       }
   }
   
-  vector<bool> query_visited(n, false); //BFS 돌면서 확인하기 위함
+  vector<bool> query_visited(n, false); //to check parent & child relationship using BFS
   queue<int> q;
   q.push(root);
   query_visited.at(root)=true;
@@ -126,13 +125,12 @@ void Backtrack::FindMatches(const Graph &data, const Graph &query, const Candida
   }
 
         for(set<int>:: iterator u_it=children.begin(); u_it!=children.end(); u_it++){
-      //     std::cout<<"u: "<<u<<" child: "<<*u_it<<" vertex: "<<*it<< endl;
+    
          bool all_mapped=true;
           //다음 u를 찾는 과정 
       
           for(vector<int> :: iterator parent_it=parent[*u_it].begin(); parent_it!=parent[*u_it].end(); parent_it++ ){
               if (!u_visited[*parent_it]){ //parent가 하나라도 mapping 되지 않은 것이 있다면
-         //       std::cout<< "mapping false parent: "<<*parent_it<<endl;
                 all_mapped=false;
                 break;
               }
@@ -173,13 +171,11 @@ void Backtrack::FindMatches(const Graph &data, const Graph &query, const Candida
           
         }
     }
-    //std::cout<<"child candidate size:" << child_possible_candidate.size()<<endl;
+  
 }
 
         }
-        // 가장 작은 candidate set 을 찾을 수 있음
-     //   std::cout<< "min_val: "<<min_val<<endl;
-       // std::cout<< "count: "<< count<< endl;
+
     
 FindMatches(data, query, cs,min_val, count+1 );
 v_visited[*it]=false;
